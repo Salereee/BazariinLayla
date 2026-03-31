@@ -3,245 +3,339 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bazariin Layla</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Bazariin Layla: ropa, calzado y accesorios con atención personalizada y envíos al norte del país.">
+    <title>Bazariin Layla | Moda, calzado y accesorios</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <h2 class="header-title">Bazariin Layla</h2>
+    <a href="#hero" class="skip-link">Saltar al contenido principal</a>
+
+    <header class="site-header" id="inicio">
+        <div class="container header-inner">
+            <a href="#hero" class="brand" aria-label="Ir al inicio">
+                <img src="BazariinLaylaLogo.png" alt="Logo de Bazariin Layla">
+                <span class="brand-text">Bazariin Layla</span>
+            </a>
+
+            <nav class="desktop-nav" aria-label="Navegación principal">
+                <ul>
+                    <li><a href="#hero" class="nav-link is-active">Inicio</a></li>
+                    <li><a href="#productos" class="nav-link">Productos</a></li>
+                    <li><a href="#destacados" class="nav-link">Envíos</a></li>
+                    <li><a href="#testimonios" class="nav-link">Testimonios</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-cta">
+                <a href="https://chat.whatsapp.com/Ggh6Ew9qt863jfvtPTcBhe" class="btn btn-sm btn-primary" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp
+                </a>
+                <button class="mobile-menu-btn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
-        <nav class="desktop-nav">
-            <ul>
-                <li><a href="#hero">Inicio</a></li>
-                <li><a href="#productos">Productos</a></li>
-                <li><a href="#destacados">Envíos</a></li>
-                <li><a href="#testimonios">Testimonios</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-        <button class="mobile-menu-btn">
-            <i class="fas fa-bars"></i>
-        </button>
     </header>
 
-    <div class="mobile-menu">
-        <div class="mobile-menu-close">
-            <i class="fas fa-times"></i>
+    <div class="mobile-backdrop" data-close-menu></div>
+    <aside class="mobile-menu" id="mobile-menu" aria-label="Menu Movil">
+        <div class="mobile-menu-header">
+            <span>Menu</span>
+            <button class="mobile-menu-close" type="button" aria-label="Cerrar menu" data-close-menu>
+                <i class="fas fa-times"></i>
+            </button>
         </div>
         <ul>
-            <li><a href="#hero">Inicio</a></li>
-            <li><a href="#productos">Productos</a></li>
-            <li><a href="#destacados">Envíos</a></li>
-            <li><a href="#testimonios">Testimonios</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#hero" class="mobile-nav-link">Inicio</a></li>
+            <li><a href="#productos" class="mobile-nav-link">Productos</a></li>
+            <li><a href="#destacados" class="mobile-nav-link">Envíos</a></li>
+            <li><a href="#testimonios" class="mobile-nav-link">Testimonios</a></li>
+            <li><a href="#contacto" class="mobile-nav-link">Contacto</a></li>
         </ul>
-    </div>
+        <a href="https://chat.whatsapp.com/Ggh6Ew9qt863jfvtPTcBhe" class="btn btn-primary mobile-menu-whatsapp" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i>
+            Consultar por WhatsApp
+        </a>
+    </aside>
 
-    <section id="hero">
-        <div class="hero-content">
-            <div class="hero-logo">
-                <img src="BazariinLaylaLogo.png" alt="Bazariin Layla Logo" class="fade-in">
-            </div>
-            <a href="#productos" class="btn-primary slide-up">Ver Productos</a>
-        </div>
-        <div class="decorative-elements">
-            <div class="decorative-circle circle-1"></div>
-            <div class="decorative-circle circle-2"></div>
-            <div class="decorative-circle circle-3"></div>
-        </div>
-    </section>
-
-    <section id="productos" class="animate-section">
-        <h2 class="section-title">Nuestros Productos</h2>
-        <div class="productos-grid">
-            <div class="producto-card">
-                <div class="producto-img">
-                    <img src="Imagenes/Ropa.png" alt="Ropa">
-                </div>
-                <h3>Ropa</h3>
-                <p>Descubre nuestra exclusiva colección de prendas para todas las ocasiones. Moda con estilo y calidad.</p>
-            </div>
-            <div class="producto-card">
-                <div class="producto-img">
-                    <img src="Imagenes/Calzado.png" alt="Calzado">
-                </div>
-                <h3>Calzado</h3>
-                <p>La mejor selección de calzado para complementar tu estilo. Comodidad y diseño en cada paso.</p>
-            </div>
-            <div class="producto-card">
-                <div class="producto-img">
-                    <img src="Imagenes/Accesorios.png" alt="Accesorios">
-                </div>
-                <h3>Accesorios</h3>
-                <p>Complementa tu look con nuestros accesorios únicos que añaden ese toque especial a tu estilo.</p>
-            </div>
-        </div>
-        <div class="consulta-whatsapp">
-            <a href="https://chat.whatsapp.com/Ggh6Ew9qt863jfvtPTcBhe?fbclid=PAZXh0bgNhZW0CMTEAAacDlo2OYBR3AuTyDddYYdGGqLzbTk0xKU5R-PtEu9PQSVGgU1Mzd8Bjnm8zOg_aem_VJPYlBL_XZa0b8LaXSNhSA" class="btn-whatsapp-grande">
-                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
-            </a>
-        </div>
-    </section>
-
-    <section id="destacados" class="animate-section">
-        <h2 class="section-title">Destacados</h2>
-        <div class="destacados-grid">
-            <div class="destacado-item">
-                <div class="destacado-icon">
-                    <i class="fas fa-truck"></i>
-                </div>
-                <h3>Envío Rápido</h3>
-                <div class="destinos-envio">
-                    <p>Realizamos envíos al norte del país:</p>
-                    <ul>
-                        <li>Cabo San Lucas</li>
-                        <li>Camalú</li>
-                        <li>Cd. Constitución</li>
-                        <li>Cd. Insurgentes</li>
-                        <li>Col. Lázaro Cárdenas</li>
-                        <li>Col. Vicente Guerrero</li>
-                        <li>Culiacán</li>
-                        <li>El Rosario</li>
-                        <li>Ensenada</li>
-                        <li>Guerrero Negro</li>
-                        <li>La Paz 5 de febrero</li>
-                        <li>La Paz 5 de mayo</li>
-                        <li>La Paz alta tensión</li>
-                        <li>La Paz Jalisco</li>
-                        <li>Loreto</li>
-                        <li>Los Barriles</li>
-                        <li>Los Mochis</li>
-                        <li>Maneadero</li>
-                        <li>Mexicali centro cívico</li>
-                        <li>Mexicali pioneros</li>
-                        <li>Mexicali turística</li>
-                        <li>Mulegé</li>
-                        <li>Puerto Peñasco</li>
-                        <li>Punta Colonet</li>
-                        <li>Rosarito</li>
-                        <li>San Felipe</li>
-                        <li>San Ignacio</li>
-                        <li>San José del Cabo</li>
-                        <li>San Luis Río Colorado</li>
-                        <li>San Telmo</li>
-                        <li>San Vicente</li>
-                        <li>Santa Rosalía</li>
-                        <li>Tijuana central</li>
-                        <li>Tijuana centro</li>
-                        <li>Tijuana garita</li>
-                        <li>Tijuana insurgentes</li>
-                        <li>Tijuana línea</li>
-                        <li>Tijuana zona río</li>
-                        <li>Vizcaíno</li>
+    <main>
+        <section id="hero" class="hero section">
+            <div class="container hero-grid">
+                <div class="hero-copy reveal">
+                    <h1>Moda, calzado y accesorios para elevar tu estilo diario</h1>
+                    <p>
+                        En Bazariin Layla te ayudamos a encontrar piezas lindas, practicas y con personalidad.
+                        Compra fácil por WhatsApp y recibe atención cercana en cada pedido.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="https://chat.whatsapp.com/Ggh6Ew9qt863jfvtPTcBhe" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-whatsapp"></i>
+                            Cotizar ahora
+                        </a>
+                        <a href="#productos" class="btn btn-ghost">Ver colección</a>
+                    </div>
+                    <ul class="hero-points">
+                        <li><i class="fas fa-heart"></i> Atención personalizada</li>
+                        <li><i class="fas fa-truck"></i> Envíos al norte del país</li>
+                        <li><i class="fas fa-star"></i> Productos seleccionados</li>
                     </ul>
                 </div>
-            </div>
-            <div class="destacado-item">
-                <div class="destacado-icon">
-                    <i class="fas fa-gift"></i>
-                </div>
-                <h3>Productos Exclusivos</h3>
-                <p>Artículos cuidadosamente seleccionados para ti.</p>
-            </div>
-            <div class="destacado-item">
-                <div class="destacado-icon">
-                    <i class="fas fa-heart"></i>
-                </div>
-                <h3>Atención Personalizada</h3>
-                <p>Te ayudamos a encontrar lo que necesitas.</p>
-            </div>
-        </div>
-    </section>
 
-    <section id="testimonios" class="animate-section">
-        <h2 class="section-title">Lo que dicen nuestros clientes</h2>
-        <div class="testimonios-grid">
-            <div class="testimonio-item">
-                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Ffaviola.hernandez.940641%2Fposts%2Fpfbid031oYU3EN9nMTMEuqGbUVmzPaYoC6SvLJ1bZPmBz7QEQYe8sMMFCrA9R5vP82EPmuMl&show_text=true&width=500" width="500" height="188" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                <div class="hero-visual reveal">
+                    <div class="hero-logo-card">
+                        <img src="BazariinLaylaLogo.png" alt="Identidad visual Bazariin Layla">
+                    </div>
+                </div>
             </div>
-            
-            <div class="testimonio-item">
-                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmarian.silva.3597%2Fposts%2Fpfbid02vohWe7fC3mKfNsctQtfyzSkcZbWU9JEGSJ8E8hd6oLPkkhXDfyriJmvdZJJQxcLvl&show_text=true&width=500" width="500" height="169" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-            </div>
-            
-            <div class="testimonio-item">
-                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Flupiitha.orduno.3%2Fposts%2Fpfbid02jooaYoXo7zCScaKHXuWwqRgvyWV9zgLW7WWBHPcoKVgNwxG9SsysZardU5PpEVRpl&show_text=true&width=500" width="500" height="186" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-            </div>
-            
-            <div class="testimonio-item">
-                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02c4QNsbA73M6HpxtiyqnDxb5cvm13hRHrqR3GsK5akEWERirPhFTWwjPtKGKwGHh8l%26id%3D100089044584864&show_text=true&width=500" width="500" height="186" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-            </div>
-            
-            <div class="testimonio-item">
-                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Falondra.solis.37%2Fposts%2Fpfbid0261C6Yc5WQZDvJAi7ED7m17raMdJ6RqVyEN2fCTijphpQ15RJ7Ey4SqaejXZZUCXhl&show_text=true&width=500" width="500" height="169" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-            </div>
-            
-            <div class="testimonio-item">
-                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fbetty.salass%2Fposts%2Fpfbid02ED8UoqDLEsYc96F1VuEQwxjQAKH7P8yf7XawjJ8aNh2fDuanfvcGFQw5T8T59jBVl&show_text=true&width=500" width="500" height="188" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-            </div>
-        </div>
-    </section>
+            <div class="hero-ornament ornament-a"></div>
+            <div class="hero-ornament ornament-b"></div>
+        </section>
 
-    <section id="contacto" class="animate-section">
-        <h2 class="section-title">Contáctanos</h2>
-        <div class="contacto-info">
-            <p>Para más información sobre nuestros productos o realizar un pedido, contáctanos a través de nuestras redes sociales.</p>
-        </div>
-        <div class="redes-sociales">
-            <a href="https://chat.whatsapp.com/Ggh6Ew9qt863jfvtPTcBhe?fbclid=PAZXh0bgNhZW0CMTEAAacDlo2OYBR3AuTyDddYYdGGqLzbTk0xKU5R-PtEu9PQSVGgU1Mzd8Bjnm8zOg_aem_VJPYlBL_XZa0b8LaXSNhSA" class="social-icon whatsapp">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-            <a href="https://www.instagram.com/bazariinlayla?igsh=MXg5OXJ3aHhkbjQ1aw%3D%3D&utm_source=qr&fbclid=PAZXh0bgNhZW0CMTEAAad1AR4_FiKVl1DW4VFfCYTeVy21y1oxlP1L3Kto4HQaBHJ5PAhY_KulDQeVMw_aem_fwIe6DyDwIYTyZnVcPHkcw" class="social-icon instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.facebook.com/profile.php?id=61552443577140&mibextid=LQQJ4d&rdid=tivcC16S8ny1W6rn&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F3XpLP9kbMnUtDw9D%2F%3Fmibextid%3DLQQJ4d#" class="social-icon facebook">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-        </div>
-        <div class="horario-atencion">
-            <h3>Horario de atención</h3>
-            <div class="horario-grid">
-                <div class="horario-item">
-                    <span class="dia">Lunes:</span>
-                    <span class="hora">10:00 a.m. - 5:00 p.m.</span>
+        <section id="productos" class="section">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p class="section-kicker">Catalogo principal</p>
+                    <h2 class="section-title">Nuestros productos</h2>
+                    <p>Explora nuestras categorías y pídelas directo por WhatsApp en minutos.</p>
                 </div>
-                <div class="horario-item">
-                    <span class="dia">Martes:</span>
-                    <span class="hora">10:00 a.m. - 5:00 p.m.</span>
+
+                <div class="productos-grid">
+                    <article class="producto-card reveal">
+                        <div class="producto-img">
+                            <img src="Imagenes/Ropa.png" alt="Colección de ropa femenina">
+                        </div>
+                        <div class="producto-body">
+                            <h3>Ropa</h3>
+                            <p>Prendas para diferentes ocasiones, con estilo actual y buen ajuste.</p>
+                            <a href="https://chat.whatsapp.com/Ggh6Ew9qt863jfvtPTcBhe" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Consultar ropa</a>
+                        </div>
+                    </article>
+
+                    <article class="producto-card reveal">
+                        <div class="producto-img">
+                            <img src="Imagenes/Calzado.png" alt="Modelos de calzado disponibles">
+                        </div>
+                        <div class="producto-body">
+                            <h3>Calzado</h3>
+                            <p>Modelos cómodos y versátiles para complementar tu outfit.</p>
+                            <a href="https://chat.whatsapp.com/Ggh6Ew9qt863jfvtPTcBhe" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Consultar calzado</a>
+                        </div>
+                    </article>
+
+                    <article class="producto-card reveal">
+                        <div class="producto-img">
+                            <img src="Imagenes/Accesorios.png" alt="Accesorios y complementos de moda">
+                        </div>
+                        <div class="producto-body">
+                            <h3>Accesorios</h3>
+                            <p>Bolsas y detalles que completan tu look con un toque especial.</p>
+                            <a href="https://chat.whatsapp.com/Ggh6Ew9qt863jfvtPTcBhe" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Consultar accesorios</a>
+                        </div>
+                    </article>
                 </div>
-                <div class="horario-item">
-                    <span class="dia">Miércoles:</span>
-                    <span class="hora">10:00 a.m. - 5:00 p.m.</span>
-                </div>
-                <div class="horario-item">
-                    <span class="dia">Jueves:</span>
-                    <span class="hora">10:00 a.m. - 5:00 p.m.</span>
-                </div>
-                <div class="horario-item">
-                    <span class="dia">Viernes:</span>
-                    <span class="hora">10:00 a.m. - 5:00 p.m.</span>
-                </div>
-                <div class="horario-item">
-                    <span class="dia">Sábado:</span>
-                    <span class="hora">10:00 a.m. - 2:00 p.m.</span>
-                </div>
-                <div class="horario-item">
-                    <span class="dia">Domingo:</span>
-                    <span class="hora">CERRADO</span>
+
+                <div class="cta-strip reveal">
+                    <p>Si no ves lo que buscas, te ayudamos a encontrarlo.</p>
+                    <a href="https://chat.whatsapp.com/Ggh6Ew9qt863jfvtPTcBhe" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp"></i>
+                        Escribir por WhatsApp
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
-        <p>&copy; 2025 Bazariin Layla. Todos los derechos reservados.</p>
+        <section id="como-comprar" class="section section-soft">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p class="section-kicker">Proceso simple</p>
+                    <h2 class="section-title">Como comprar</h2>
+                    <p>Un flujo rápido para que pases de inspirarte a pedir sin complicaciones.</p>
+                </div>
+
+                <div class="steps-grid">
+                    <article class="step-card reveal">
+                        <span class="step-number">1</span>
+                        <h3>Explora</h3>
+                        <p>Revisa productos, estilos y novedades en nuestra pagina y redes.</p>
+                    </article>
+                    <article class="step-card reveal">
+                        <span class="step-number">2</span>
+                        <h3>Consulta</h3>
+                        <p>Envía mensaje por WhatsApp para confirmar existencias, tallas y precio.</p>
+                    </article>
+                    <article class="step-card reveal">
+                        <span class="step-number">3</span>
+                        <h3>Recibe</h3>
+                        <p>Coordina tu entrega local o envió a tu destino de forma segura.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="destacados" class="section">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p class="section-kicker">Lo que nos diferencia</p>
+                    <h2 class="section-title">Envíos y beneficios</h2>
+                    <p>Pensado para que compres con confianza y acompañamiento en todo momento.</p>
+                </div>
+
+                <div class="destacados-grid">
+                    <article class="destacado-item shipping reveal">
+                        <div class="destacado-icon"><i class="fas fa-truck"></i></div>
+                        <h3>Enviamos al norte del país</h3>
+                        <p>Consulta cobertura y tiempos según tu ciudad.</p>
+                        <details class="shipping-details">
+                            <summary>Ver destinos de envió disponibles</summary>
+                            <ul class="shipping-list">
+                                <li>Cabo San Lucas</li>
+                                <li>Camalu</li>
+                                <li>Cd. Constitucion</li>
+                                <li>Cd. Insurgentes</li>
+                                <li>Col. Lazaro Cardenas</li>
+                                <li>Col. Vicente Guerrero</li>
+                                <li>Culiacan</li>
+                                <li>El Rosario</li>
+                                <li>Ensenada</li>
+                                <li>Guerrero Negro</li>
+                                <li>La Paz 5 de febrero</li>
+                                <li>La Paz 5 de mayo</li>
+                                <li>La Paz alta tension</li>
+                                <li>La Paz Jalisco</li>
+                                <li>Loreto</li>
+                                <li>Los Barriles</li>
+                                <li>Los Mochis</li>
+                                <li>Maneadero</li>
+                                <li>Mexicali centro cívico</li>
+                                <li>Mexicali pioneros</li>
+                                <li>Mexicali turística</li>
+                                <li>Mulege</li>
+                                <li>Puerto Penasco</li>
+                                <li>Punta Colonet</li>
+                                <li>Rosarito</li>
+                                <li>San Felipe</li>
+                                <li>San Ignacio</li>
+                                <li>San Jose del Cabo</li>
+                                <li>San Luis Rio Colorado</li>
+                                <li>San Telmo</li>
+                                <li>San Vicente</li>
+                                <li>Santa Rosalia</li>
+                                <li>Tijuana central</li>
+                                <li>Tijuana centro</li>
+                                <li>Tijuana garita</li>
+                                <li>Tijuana insurgentes</li>
+                                <li>Tijuana linea</li>
+                                <li>Tijuana zona rio</li>
+                                <li>Vizcaino</li>
+                            </ul>
+                        </details>
+                    </article>
+
+                    <article class="destacado-item reveal">
+                        <div class="destacado-icon"><i class="fas fa-gift"></i></div>
+                        <h3>Productos exclusivos</h3>
+                        <p>Seleccionamos piezas con estilo para ofrecer variedad y calidad.</p>
+                    </article>
+
+                    <article class="destacado-item reveal">
+                        <div class="destacado-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                        <h3>Atención personalizada</h3>
+                        <p>Te asesoramos para elegir mejor según tu gusto y necesidad.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonios" class="section section-soft">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p class="section-kicker">Confianza real</p>
+                    <h2 class="section-title">Lo que dicen nuestras clientas</h2>
+                    <p>Reseñas reales publicadas en Facebook por quienes ya compraron con nosotras.</p>
+                </div>
+
+                <div class="testimonios-grid">
+                    <article class="testimonio-item reveal">
+                        <iframe loading="lazy" title="Testimonio 1" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Ffaviola.hernandez.940641%2Fposts%2Fpfbid031oYU3EN9nMTMEuqGbUVmzPaYoC6SvLJ1bZPmBz7QEQYe8sMMFCrA9R5vP82EPmuMl&show_text=true&width=500" width="500" height="188" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </article>
+                    <article class="testimonio-item reveal">
+                        <iframe loading="lazy" title="Testimonio 2" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmarian.silva.3597%2Fposts%2Fpfbid02vohWe7fC3mKfNsctQtfyzSkcZbWU9JEGSJ8E8hd6oLPkkhXDfyriJmvdZJJQxcLvl&show_text=true&width=500" width="500" height="169" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </article>
+                    <article class="testimonio-item reveal">
+                        <iframe loading="lazy" title="Testimonio 3" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Flupiitha.orduno.3%2Fposts%2Fpfbid02jooaYoXo7zCScaKHXuWwqRgvyWV9zgLW7WWBHPcoKVgNwxG9SsysZardU5PpEVRpl&show_text=true&width=500" width="500" height="186" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </article>
+                    <article class="testimonio-item reveal">
+                        <iframe loading="lazy" title="Testimonio 4" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02c4QNsbA73M6HpxtiyqnDxb5cvm13hRHrqR3GsK5akEWERirPhFTWwjPtKGKwGHh8l%26id%3D100089044584864&show_text=true&width=500" width="500" height="186" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </article>
+                    <article class="testimonio-item reveal">
+                        <iframe loading="lazy" title="Testimonio 5" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Falondra.solis.37%2Fposts%2Fpfbid0261C6Yc5WQZDvJAi7ED7m17raMdJ6RqVyEN2fCTijphpQ15RJ7Ey4SqaejXZZUCXhl&show_text=true&width=500" width="500" height="169" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </article>
+                    <article class="testimonio-item reveal">
+                        <iframe loading="lazy" title="Testimonio 6" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fbetty.salass%2Fposts%2Fpfbid02ED8UoqDLEsYc96F1VuEQwxjQAKH7P8yf7XawjJ8aNh2fDuanfvcGFQw5T8T59jBVl&show_text=true&width=500" width="500" height="188" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="section">
+            <div class="container contacto-grid">
+                <article class="contacto-panel reveal">
+                    <p class="section-kicker">Contacto directo</p>
+                    <h2 class="section-title">Hablemos de tu pedido</h2>
+                    <p>
+                        Si ya tienes una idea o quieres recomendaciones, escríbenos y te atendemos rápido.
+                        Estamos para ayudarte a elegir mejor.
+                    </p>
+                    <div class="contact-actions">
+                        <a href="https://chat.whatsapp.com/Ggh6Ew9qt863jfvtPTcBhe" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-whatsapp"></i>
+                            WhatsApp
+                        </a>
+                        <a href="https://www.instagram.com/bazariinlayla" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram"></i>
+                            Instagram
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61552443577140" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-facebook-f"></i>
+                            Facebook
+                        </a>
+                    </div>
+                    <p class="contacto-note">Respuesta por mensaje durante horario de atención.</p>
+                </article>
+
+                <aside class="horario-atencion reveal">
+                    <h3>Horario de atención</h3>
+                    <div class="horario-grid">
+                        <div class="horario-item"><span class="dia">Lunes</span><span class="hora">10:00 a.m. - 5:00 p.m.</span></div>
+                        <div class="horario-item"><span class="dia">Martes</span><span class="hora">10:00 a.m. - 5:00 p.m.</span></div>
+                        <div class="horario-item"><span class="dia">Miércoles</span><span class="hora">10:00 a.m. - 5:00 p.m.</span></div>
+                        <div class="horario-item"><span class="dia">Jueves</span><span class="hora">10:00 a.m. - 5:00 p.m.</span></div>
+                        <div class="horario-item"><span class="dia">Viernes</span><span class="hora">10:00 a.m. - 5:00 p.m.</span></div>
+                        <div class="horario-item"><span class="dia">Sábado</span><span class="hora">10:00 a.m. - 2:00 p.m.</span></div>
+                        <div class="horario-item"><span class="dia">Domingo</span><span class="hora">Cerrado</span></div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <a href="https://chat.whatsapp.com/Ggh6Ew9qt863jfvtPTcBhe" class="floating-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>Bazariin Layla</p>
+            <p>&copy; <span id="current-year"></span> Todos los derechos reservados.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
