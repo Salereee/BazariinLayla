@@ -8,6 +8,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const mobileLinks = document.querySelectorAll(".mobile-nav-link");
     const allAnchors = document.querySelectorAll("a[href^='#']");
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const hasGSAP = typeof window.gsap !== "undefined" && typeof window.ScrollTrigger !== "undefined";
+
+    const syncHeaderOffset = () => {
+        if (!header) {
+            return;
+        }
+
+        const headerHeight = Math.ceil(header.getBoundingClientRect().height);
+        const safeHeaderHeight = headerHeight + 14;
+        document.documentElement.style.setProperty("--header-offset", safeHeaderHeight + "px");
+    };
 
     const openMenu = () => {
         if (!mobileMenu || !backdrop || !menuBtn) {
@@ -18,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
         backdrop.classList.add("is-open");
         body.classList.add("menu-open");
         menuBtn.setAttribute("aria-expanded", "true");
+        syncHeaderOffset();
     };
 
     const closeMenu = () => {
@@ -29,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
         backdrop.classList.remove("is-open");
         body.classList.remove("menu-open");
         menuBtn.setAttribute("aria-expanded", "false");
+        syncHeaderOffset();
     };
 
     if (menuBtn) {
@@ -72,34 +85,103 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    const revealElements = document.querySelectorAll(".reveal");
+    if (hasGSAP && !prefersReducedMotion) {
+        gsap.registerPlugin(ScrollTrigger);
+        ScrollTrigger.config({ ignoreMobileResize: true });
 
-    revealElements.forEach((element, index) => {
-        const delay = (index % 8) * 70;
-        element.style.setProperty("--reveal-delay", delay + "ms");
-    });
+        gsap.from(".site-header", {
+            y: -56,
+            autoAlpha: 0,
+            duration: 0.9,
+            ease: "power3.out"
+        });
 
-    if ("IntersectionObserver" in window) {
-        const revealObserver = new IntersectionObserver(
-            (entries, observer) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                        observer.unobserve(entry.target);
-                    }
-                });
+        const revealGroups = [
+            {
+                trigger: "#hero",
+                targets: [".hero-copy > *", ".hero-visual"]
             },
             {
-                threshold: 0.1,
-                rootMargin: "0px 0px -8% 0px"
+                trigger: "#productos",
+                targets: ["#productos .section-heading", "#productos .producto-card", "#productos .cta-strip"]
+            },
+            {
+                trigger: "#como-comprar",
+                targets: ["#como-comprar .section-heading", "#como-comprar .step-card"]
+            },
+            {
+                trigger: "#destacados",
+                targets: ["#destacados .section-heading", "#destacados .destacado-item"]
+            },
+            {
+                trigger: "#testimonios",
+                targets: ["#testimonios .section-heading", "#testimonios .testimonio-item"]
+            },
+            {
+                trigger: "#contacto",
+                targets: ["#contacto .contacto-panel", "#contacto .horario-atencion"]
             }
-        );
+        ];
 
-        revealElements.forEach((element) => revealObserver.observe(element));
-    } else {
-        requestAnimationFrame(() => {
-            revealElements.forEach((element) => element.classList.add("visible"));
+        revealGroups.forEach((group) => {
+            const targetElements = gsap.utils.toArray(group.targets.join(", "));
+
+            if (!targetElements.length) {
+                return;
+            }
+
+            gsap.set(targetElements, {
+                autoAlpha: 0,
+                y: 38
+            });
+
+            gsap.to(targetElements, {
+                autoAlpha: 1,
+                y: 0,
+                duration: 1.05,
+                ease: "power3.out",
+                stagger: {
+                    each: 0.12,
+                    from: "start"
+                },
+                overwrite: "auto",
+                scrollTrigger: {
+                    trigger: group.trigger,
+                    start: "top 82%",
+                    once: true
+                }
+            });
         });
+
+        const isDesktop = window.matchMedia("(min-width: 821px)").matches;
+
+        if (isDesktop) {
+            gsap.to(".hero-logo-card", {
+                y: -10,
+                duration: 3.6,
+                ease: "sine.inOut",
+                repeat: -1,
+                yoyo: true
+            });
+
+            gsap.to(".ornament-a", {
+                x: -18,
+                y: 18,
+                duration: 8,
+                ease: "sine.inOut",
+                repeat: -1,
+                yoyo: true
+            });
+
+            gsap.to(".ornament-b", {
+                x: 14,
+                y: -14,
+                duration: 9.2,
+                ease: "sine.inOut",
+                repeat: -1,
+                yoyo: true
+            });
+        }
     }
 
     const sectionIds = ["hero", "productos", "destacados", "testimonios", "contacto"];
@@ -143,7 +225,15 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", syncHeaderOffset, { passive: true });
+    window.addEventListener("orientationchange", syncHeaderOffset, { passive: true });
+    window.addEventListener("load", syncHeaderOffset, { passive: true });
     onScroll();
+    syncHeaderOffset();
+
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(syncHeaderOffset);
+    }
 
     const currentYearNode = document.getElementById("current-year");
     if (currentYearNode) {
