@@ -182,6 +182,43 @@ document.addEventListener("DOMContentLoaded", () => {
                 yoyo: true
             });
         }
+
+        const highlightCards = gsap.utils.toArray(".producto-card, .step-card, .destacado-item, .testimonio-item");
+        highlightCards.forEach((card) => {
+            card.addEventListener("mouseenter", () => {
+                gsap.to(card, {
+                    rotateX: -2,
+                    rotateY: 2,
+                    transformPerspective: 900,
+                    duration: 0.32,
+                    ease: "power3.out"
+                });
+            });
+
+            card.addEventListener("mouseleave", () => {
+                gsap.to(card, {
+                    rotateX: 0,
+                    rotateY: 0,
+                    duration: 0.38,
+                    ease: "power3.out"
+                });
+            });
+        });
+
+        const ctaStrip = document.querySelector(".cta-strip");
+        if (ctaStrip) {
+            gsap.fromTo(
+                ctaStrip,
+                { boxShadow: "0 10px 30px rgba(20, 20, 20, 0.08)" },
+                {
+                    boxShadow: "0 24px 55px rgba(221, 105, 155, 0.25)",
+                    duration: 2.2,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "sine.inOut"
+                }
+            );
+        }
     }
 
     const sectionIds = ["hero", "productos", "destacados", "testimonios", "contacto"];
@@ -222,6 +259,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         header.classList.toggle("is-scrolled", window.scrollY > 20);
+        const scrollable = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+        const progress = Math.min(Math.max(window.scrollY / scrollable, 0), 1);
+        document.documentElement.style.setProperty("--scroll-progress", progress.toFixed(4));
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -230,6 +270,17 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("load", syncHeaderOffset, { passive: true });
     onScroll();
     syncHeaderOffset();
+
+    if (!prefersReducedMotion) {
+        const clickableElements = document.querySelectorAll(".btn, .mobile-menu-btn, .mobile-menu-close, .mobile-nav-link");
+        clickableElements.forEach((element) => {
+            element.addEventListener("pointerdown", () => element.classList.add("is-pressed"));
+            const release = () => element.classList.remove("is-pressed");
+            element.addEventListener("pointerup", release);
+            element.addEventListener("pointerleave", release);
+            element.addEventListener("blur", release);
+        });
+    }
 
     if (document.fonts && document.fonts.ready) {
         document.fonts.ready.then(syncHeaderOffset);
